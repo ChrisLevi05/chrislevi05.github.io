@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Клиенты — AutoRent API</title>
+  <meta name="description" content="Регистрация и данные клиентов.">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-root="../">
+  <header class="topbar">
+    <a class="logo" href="../index.html"><img src="../assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="../index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="../getting-started/index.html">Быстрый старт</a></li><li><a href="../getting-started/authentication.html">Аутентификация</a></li><li><a href="../getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="../api/index.html">Все эндпоинты</a></li><li><a href="../api/vehicles.html">Автомобили</a></li><li><a href="../api/bookings.html">Бронирования</a></li><li><a class="active" href="../api/customers.html">Клиенты</a></li><li><a href="../api/payments.html">Платежи</a></li><li><a href="../api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="../guides/index.html">Руководства</a></li><li><a href="../guides/errors.html">Коды ошибок</a></li><li><a href="../guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="../changelog.html">История изменений</a></li><li><a href="../faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="../about/">О сайте</a></li><li><a href="../blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Клиенты</h1>
+<div class="endpoint"><span class="method post">POST</span><code>/customers</code><span class="ep-desc">Зарегистрировать клиента</span></div>
+<h2>Тело запроса</h2>
+<pre><code class="lang-json">{
+  &quot;first_name&quot;: &quot;Awa&quot;,
+  &quot;last_name&quot;: &quot;Koné&quot;,
+  &quot;email&quot;: &quot;awa@example.com&quot;,
+  &quot;phone&quot;: &quot;+225-0700000000&quot;,
+  &quot;driver_license&quot;: {
+    &quot;number&quot;: &quot;CI-123456&quot;,
+    &quot;expires&quot;: &quot;2029-05-01&quot;
+  }
+}</code></pre>
+<h2>Правила проверки</h2>
+<ul>
+  <li>Возраст водителя — не менее 21 года.</li>
+  <li>Водительское удостоверение действует на всё время аренды.</li>
+  <li>E-mail уникален в пределах партнёра.</li>
+</ul>
+<div class="endpoint"><span class="method get">GET</span><code>/customers/{{id}}</code><span class="ep-desc">Данные клиента</span></div>
+<p>Персональные данные возвращаются только ключам с областью <code>customers:read</code>.</p>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="../assets/js/copy-code.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>

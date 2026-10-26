@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="Arial, sans-serif" font-size="14">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a4f8b"/></marker></defs>
+  <rect width="760" height="300" fill="#ffffff"/>
+  <g fill="#e8f0fa" stroke="#1a4f8b" stroke-width="2">
+    <rect x="20" y="115" width="130" height="70" rx="10"/>
+    <rect x="200" y="115" width="140" height="70" rx="10"/>
+    <rect x="390" y="115" width="140" height="70" rx="10"/>
+    <rect x="590" y="30" width="150" height="60" rx="10"/>
+    <rect x="590" y="120" width="150" height="60" rx="10"/>
+    <rect x="590" y="210" width="150" height="60" rx="10"/>
+  </g>
+  <g fill="#1f2933" text-anchor="middle">
+    <text x="85" y="145">Приложение</text><text x="85" y="165">партнёра</text>
+    <text x="270" y="145">CDN / WAF</text><text x="270" y="165">(Cloudflare)</text>
+    <text x="460" y="145">API Gateway</text><text x="460" y="165">/v2</text>
+    <text x="665" y="65">Каталог</text>
+    <text x="665" y="155">Бронирования</text>
+    <text x="665" y="245">Платежи</text>
+  </g>
+  <g stroke="#1a4f8b" stroke-width="2" marker-end="url(#a)">
+    <line x1="150" y1="150" x2="198" y2="150"/>
+    <line x1="340" y1="150" x2="388" y2="150"/>
+    <line x1="530" y1="140" x2="588" y2="65"/>
+    <line x1="530" y1="150" x2="588" y2="150"/>
+    <line x1="530" y1="160" x2="588" y2="235"/>
+  </g>
+  <text x="380" y="290" text-anchor="middle" fill="#6b7280" font-size="12">Архитектура AutoRent API</text>
+</svg>

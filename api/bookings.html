@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бронирования — AutoRent API</title>
+  <meta name="description" content="Создание и управление бронированиями.">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-root="../">
+  <header class="topbar">
+    <a class="logo" href="../index.html"><img src="../assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="../index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="../getting-started/index.html">Быстрый старт</a></li><li><a href="../getting-started/authentication.html">Аутентификация</a></li><li><a href="../getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="../api/index.html">Все эндпоинты</a></li><li><a href="../api/vehicles.html">Автомобили</a></li><li><a class="active" href="../api/bookings.html">Бронирования</a></li><li><a href="../api/customers.html">Клиенты</a></li><li><a href="../api/payments.html">Платежи</a></li><li><a href="../api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="../guides/index.html">Руководства</a></li><li><a href="../guides/errors.html">Коды ошибок</a></li><li><a href="../guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="../changelog.html">История изменений</a></li><li><a href="../faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="../about/">О сайте</a></li><li><a href="../blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Бронирования</h1>
+<h2>Жизненный цикл бронирования</h2>
+<img class="diagram" src="../assets/images/booking-flow.svg" alt="Схема жизненного цикла бронирования">
+<div class="endpoint"><span class="method post">POST</span><code>/bookings</code><span class="ep-desc">Создать бронирование</span></div>
+<h2>Тело запроса</h2>
+<pre><code class="lang-json">{
+  &quot;vehicle_id&quot;: &quot;veh_1042&quot;,
+  &quot;customer_id&quot;: &quot;cus_331&quot;,
+  &quot;pickup_date&quot;: &quot;2026-11-07&quot;,
+  &quot;return_date&quot;: &quot;2026-11-09&quot;,
+  &quot;options&quot;: [
+    &quot;child_seat&quot;
+  ]
+}</code></pre>
+<h2>Ответ (201 Created)</h2>
+<pre><code class="lang-json">{
+  &quot;id&quot;: &quot;bkg_9001&quot;,
+  &quot;status&quot;: &quot;pending&quot;,
+  &quot;total&quot;: 52000,
+  &quot;currency&quot;: &quot;XOF&quot;,
+  &quot;expires_at&quot;: &quot;2026-11-01T12:00:00Z&quot;
+}</code></pre>
+<div class="note">Бронирование в статусе <code>pending</code> живёт 30 минут. Если оплата не поступила, оно отменяется автоматически.</div>
+<div class="endpoint"><span class="method delete">DELETE</span><code>/bookings/{{id}}</code><span class="ep-desc">Отменить бронирование</span></div>
+<p>Бесплатная отмена — не позднее чем за 24 часа до выдачи автомобиля.</p>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="../assets/js/copy-code.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>

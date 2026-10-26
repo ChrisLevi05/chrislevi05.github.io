@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Аутентификация — AutoRent API</title>
+  <meta name="description" content="API-ключи и токены доступа AutoRent API.">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-root="../">
+  <header class="topbar">
+    <a class="logo" href="../index.html"><img src="../assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="../index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="../getting-started/index.html">Быстрый старт</a></li><li><a class="active" href="../getting-started/authentication.html">Аутентификация</a></li><li><a href="../getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="../api/index.html">Все эндпоинты</a></li><li><a href="../api/vehicles.html">Автомобили</a></li><li><a href="../api/bookings.html">Бронирования</a></li><li><a href="../api/customers.html">Клиенты</a></li><li><a href="../api/payments.html">Платежи</a></li><li><a href="../api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="../guides/index.html">Руководства</a></li><li><a href="../guides/errors.html">Коды ошибок</a></li><li><a href="../guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="../changelog.html">История изменений</a></li><li><a href="../faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="../about/">О сайте</a></li><li><a href="../blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Аутентификация</h1>
+<p class="lead">Каждый запрос должен содержать API-ключ в заголовке <code>Authorization</code>.</p>
+<h2>Заголовок запроса</h2>
+<pre><code class="lang-http">GET /v2/vehicles HTTP/1.1
+Host: api.autorent.example
+Authorization: Bearer ar_live_XXXXXXXXXXXXXXXX
+Accept: application/json</code></pre>
+<h2>Права ключа</h2>
+<div class="table-wrap"><table><thead><tr><th>Область (scope)</th><th>Доступ</th></tr></thead><tbody><tr><td><code>vehicles:read</code></td><td>Чтение каталога автомобилей</td></tr><tr><td><code>bookings:write</code></td><td>Создание и отмена бронирований</td></tr><tr><td><code>payments:write</code></td><td>Проведение платежей</td></tr><tr><td><code>webhooks:manage</code></td><td>Управление подписками на события</td></tr></tbody></table></div>
+<h2>Ошибки аутентификации</h2>
+<div class="table-wrap"><table><thead><tr><th>Код</th><th>Причина</th></tr></thead><tbody><tr><td>401</td><td>Ключ отсутствует или неверен</td></tr><tr><td>403</td><td>У ключа нет нужной области доступа</td></tr></tbody></table></div>
+<div class="warning">Никогда не размещайте ключ в коде фронтенда или в публичном репозитории. Все запросы к API выполняйте со своего сервера.</div>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="../assets/js/copy-code.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>

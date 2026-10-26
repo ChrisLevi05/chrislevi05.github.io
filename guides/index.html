@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Руководства — AutoRent API</title>
+  <meta name="description" content="Практические руководства по AutoRent API.">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-root="../">
+  <header class="topbar">
+    <a class="logo" href="../index.html"><img src="../assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="../index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="../getting-started/index.html">Быстрый старт</a></li><li><a href="../getting-started/authentication.html">Аутентификация</a></li><li><a href="../getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="../api/index.html">Все эндпоинты</a></li><li><a href="../api/vehicles.html">Автомобили</a></li><li><a href="../api/bookings.html">Бронирования</a></li><li><a href="../api/customers.html">Клиенты</a></li><li><a href="../api/payments.html">Платежи</a></li><li><a href="../api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a class="active" href="../guides/index.html">Руководства</a></li><li><a href="../guides/errors.html">Коды ошибок</a></li><li><a href="../guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="../changelog.html">История изменений</a></li><li><a href="../faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="../about/">О сайте</a></li><li><a href="../blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Руководства</h1>
+<p class="lead">Статьи о типичных задачах интеграции.</p>
+<div class="cards">
+  <a class="card" href="errors.html"><h3>Коды ошибок</h3><p>Как читать ответы с ошибками и что делать.</p></a>
+  <a class="card" href="pagination.html"><h3>Пагинация</h3><p>Как получать большие списки по частям.</p></a>
+  <a class="card" href="../api/webhooks.html"><h3>Вебхуки</h3><p>Как получать события без постоянных опросов.</p></a>
+</div>
+<h2>Лимиты запросов</h2>
+<p>Не более 100 запросов в минуту на ключ. При превышении API отвечает кодом <code>429 Too Many Requests</code> и заголовком <code>Retry-After</code>.</p>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="../assets/js/copy-code.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>

@@ -3,22 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Учебный сайт для CDN — Крис Леви</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Обзор — AutoRent API</title>
+  <meta name="description" content="Документация REST API сервиса аренды автомобилей AutoRent.">
+  <link rel="stylesheet" href="assets/css/docs.css">
 </head>
-<body>
-  <nav>
-    <a href="about/">О сайте</a> |
-    <a href="blog/post1.html">Блог</a>
-  </nav>
+<body data-root="">
+  <header class="topbar">
+    <a class="logo" href="index.html"><img src="assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a class="active" href="index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="getting-started/index.html">Быстрый старт</a></li><li><a href="getting-started/authentication.html">Аутентификация</a></li><li><a href="getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="api/index.html">Все эндпоинты</a></li><li><a href="api/vehicles.html">Автомобили</a></li><li><a href="api/bookings.html">Бронирования</a></li><li><a href="api/customers.html">Клиенты</a></li><li><a href="api/payments.html">Платежи</a></li><li><a href="api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="guides/index.html">Руководства</a></li><li><a href="guides/errors.html">Коды ошибок</a></li><li><a href="guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="changelog.html">История изменений</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="about/">О сайте</a></li><li><a href="blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
 
-  <h1>Учебный сайт для экспериментов с CDN</h1>
-  <p>Этот сайт размещён на GitHub Pages и служит источником (Origin) для лабораторных работ по Cloudflare.</p>
+<h1>AutoRent API</h1>
+<p class="lead">AutoRent API — REST API вымышленного сервиса аренды автомобилей. Через него партнёры получают каталог машин, создают бронирования, регистрируют клиентов и принимают оплату.</p>
+<h2>Архитектура</h2>
+<img class="diagram" src="assets/images/architecture.svg" alt="Архитектура AutoRent API">
+<h2>Основные возможности</h2>
+<div class="cards">
+  <a class="card" href="api/vehicles.html"><h3>Автомобили</h3><p>Каталог, фильтры, доступность по датам.</p></a>
+  <a class="card" href="api/bookings.html"><h3>Бронирования</h3><p>Создание, подтверждение и отмена аренды.</p></a>
+  <a class="card" href="api/payments.html"><h3>Платежи</h3><p>Оплата, возврат депозита, статусы.</p></a>
+  <a class="card" href="api/webhooks.html"><h3>Вебхуки</h3><p>Уведомления о событиях в реальном времени.</p></a>
+</div>
+<h2>Базовый адрес</h2>
+<pre><code class="lang-text">https://api.autorent.example/v2</code></pre>
+<p>Все ответы приходят в формате JSON (UTF-8). Полная спецификация в формате OpenAPI: <a href="data/openapi.json">openapi.json</a>.</p>
+<h2>С чего начать</h2>
+<ol>
+  <li><a href="getting-started/index.html">Получите API-ключ</a></li>
+  <li><a href="getting-started/authentication.html">Разберитесь с аутентификацией</a></li>
+  <li><a href="getting-started/first-request.html">Отправьте первый запрос</a></li>
+</ol>
 
-  <img src="images/test.jpg" alt="Тестовое изображение" width="480">
-
-  <footer>
-    <p>Автор: Bezeme Bezeme Chris Levi, КубГУ, 2026</p>
-  </footer>
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="assets/js/copy-code.js"></script>
+  <script src="assets/js/search.js"></script>
 </body>
 </html>

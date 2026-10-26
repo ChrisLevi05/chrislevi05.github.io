@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вебхуки — AutoRent API</title>
+  <meta name="description" content="Подписка на события AutoRent API.">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-root="../">
+  <header class="topbar">
+    <a class="logo" href="../index.html"><img src="../assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="../index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="../getting-started/index.html">Быстрый старт</a></li><li><a href="../getting-started/authentication.html">Аутентификация</a></li><li><a href="../getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="../api/index.html">Все эндпоинты</a></li><li><a href="../api/vehicles.html">Автомобили</a></li><li><a href="../api/bookings.html">Бронирования</a></li><li><a href="../api/customers.html">Клиенты</a></li><li><a href="../api/payments.html">Платежи</a></li><li><a class="active" href="../api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="../guides/index.html">Руководства</a></li><li><a href="../guides/errors.html">Коды ошибок</a></li><li><a href="../guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="../changelog.html">История изменений</a></li><li><a href="../faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="../about/">О сайте</a></li><li><a href="../blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Вебхуки</h1>
+<p class="lead">Вебхук — HTTP-запрос, который AutoRent отправляет на ваш сервер при наступлении события.</p>
+<div class="endpoint"><span class="method post">POST</span><code>/webhooks</code><span class="ep-desc">Создать подписку</span></div>
+<pre><code class="lang-json">{
+  &quot;url&quot;: &quot;https://partner.example/hooks/autorent&quot;,
+  &quot;events&quot;: [
+    &quot;booking.confirmed&quot;,
+    &quot;payment.succeeded&quot;
+  ]
+}</code></pre>
+<h2>События</h2>
+<div class="table-wrap"><table><thead><tr><th>Событие</th><th>Когда отправляется</th></tr></thead><tbody><tr><td><code>booking.confirmed</code></td><td>Бронирование оплачено и подтверждено</td></tr><tr><td><code>booking.cancelled</code></td><td>Бронирование отменено</td></tr><tr><td><code>payment.succeeded</code></td><td>Платёж прошёл успешно</td></tr><tr><td><code>payment.refunded</code></td><td>Средства возвращены клиенту</td></tr></tbody></table></div>
+<h2>Проверка подписи</h2>
+<p>Каждый запрос содержит заголовок <code>X-AutoRent-Signature</code> — HMAC-SHA256 от тела запроса с вашим секретом. Отклоняйте запросы с неверной подписью.</p>
+<pre><code class="lang-python">import hmac, hashlib
+
+def is_valid(body: bytes, signature: str, secret: str) -&gt; bool:
+    expected = hmac.new(secret.encode(), body, hashlib.sha256).hexdigest()
+    return hmac.compare_digest(expected, signature)</code></pre>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="../assets/js/copy-code.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ — AutoRent API</title>
+  <meta name="description" content="Частые вопросы об AutoRent API.">
+  <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body data-root="">
+  <header class="topbar">
+    <a class="logo" href="index.html"><img src="assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="getting-started/index.html">Быстрый старт</a></li><li><a href="getting-started/authentication.html">Аутентификация</a></li><li><a href="getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="api/index.html">Все эндпоинты</a></li><li><a href="api/vehicles.html">Автомобили</a></li><li><a href="api/bookings.html">Бронирования</a></li><li><a href="api/customers.html">Клиенты</a></li><li><a href="api/payments.html">Платежи</a></li><li><a href="api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="guides/index.html">Руководства</a></li><li><a href="guides/errors.html">Коды ошибок</a></li><li><a href="guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="changelog.html">История изменений</a></li><li><a class="active" href="faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="about/">О сайте</a></li><li><a href="blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Частые вопросы</h1>
+<details open><summary>Сколько стоит доступ к API?</summary><p>Sandbox бесплатен. В Production комиссия взимается только с оплаченных бронирований.</p></details>
+<details><summary>Можно ли бронировать без оплаты?</summary><p>Да, бронирование живёт 30 минут в статусе <code>pending</code>, затем отменяется.</p></details>
+<details><summary>В какой валюте указаны цены?</summary><p>В франках КФА (XOF), без копеек.</p></details>
+<details><summary>Как протестировать вебхуки локально?</summary><p>Используйте туннель (например, Cloudflare Tunnel) и укажите его адрес при создании подписки.</p></details>
+<details><summary>Где найти спецификацию OpenAPI?</summary><p>Файл <a href="data/openapi.json">openapi.json</a> можно импортировать в Postman или Swagger UI.</p></details>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="assets/js/copy-code.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

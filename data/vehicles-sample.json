@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "id": "veh_1042",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "year": 2023,
+      "category": "sedan",
+      "price_per_day": 25000,
+      "currency": "XOF",
+      "city": "abidjan",
+      "available": true
+    },
+    {
+      "id": "veh_1043",
+      "brand": "Kia",
+      "model": "Picanto",
+      "year": 2022,
+      "category": "economy",
+      "price_per_day": 18000,
+      "currency": "XOF",
+      "city": "abidjan",
+      "available": true
+    },
+    {
+      "id": "veh_2077",
+      "brand": "Hyundai",
+      "model": "Tucson",
+      "year": 2024,
+      "category": "suv",
+      "price_per_day": 45000,
+      "currency": "XOF",
+      "city": "abidjan",
+      "available": false
+    },
+    {
+      "id": "veh_3010",
+      "brand": "Toyota",
+      "model": "Hiace",
+      "year": 2021,
+      "category": "minibus",
+      "price_per_day": 60000,
+      "currency": "XOF",
+      "city": "yamoussoukro",
+      "available": true
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "per_page": 20,
+    "total": 4,
+    "total_pages": 1
+  }
+}

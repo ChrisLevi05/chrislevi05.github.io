@@ -1,0 +1,198 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "AutoRent API",
+    "version": "2.1.0",
+    "description": "Учебная спецификация вымышленного сервиса аренды автомобилей"
+  },
+  "servers": [
+    {
+      "url": "https://api.autorent.example/v2"
+    },
+    {
+      "url": "https://sandbox.autorent.example/v2"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/vehicles": {
+      "get": {
+        "summary": "Список автомобилей",
+        "parameters": [
+          {
+            "name": "city",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/vehicles/{id}": {
+      "get": {
+        "summary": "Карточка автомобиля",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Не найден"
+          }
+        }
+      }
+    },
+    "/bookings": {
+      "post": {
+        "summary": "Создать бронирование",
+        "responses": {
+          "201": {
+            "description": "Создано"
+          },
+          "409": {
+            "description": "Автомобиль занят"
+          }
+        }
+      }
+    },
+    "/bookings/{id}": {
+      "get": {
+        "summary": "Получить бронирование",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Отменить бронирование",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Отменено"
+          }
+        }
+      }
+    },
+    "/customers": {
+      "post": {
+        "summary": "Зарегистрировать клиента",
+        "responses": {
+          "201": {
+            "description": "Создано"
+          }
+        }
+      }
+    },
+    "/payments": {
+      "post": {
+        "summary": "Провести оплату",
+        "responses": {
+          "201": {
+            "description": "Создано"
+          }
+        }
+      }
+    },
+    "/payments/{id}/refund": {
+      "post": {
+        "summary": "Вернуть платёж",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/webhooks": {
+      "post": {
+        "summary": "Подписаться на события",
+        "responses": {
+          "201": {
+            "description": "Создано"
+          }
+        }
+      }
+    }
+  }
+}

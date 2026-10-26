@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Обзор",
+    "url": "index.html",
+    "description": "Документация REST API сервиса аренды автомобилей AutoRent.",
+    "keywords": "Обзор"
+  },
+  {
+    "title": "Быстрый старт",
+    "url": "getting-started/index.html",
+    "description": "Как начать работу с AutoRent API.",
+    "keywords": "Начало работы"
+  },
+  {
+    "title": "Аутентификация",
+    "url": "getting-started/authentication.html",
+    "description": "API-ключи и токены доступа AutoRent API.",
+    "keywords": "Начало работы"
+  },
+  {
+    "title": "Первый запрос",
+    "url": "getting-started/first-request.html",
+    "description": "Пример первого запроса к AutoRent API.",
+    "keywords": "Начало работы"
+  },
+  {
+    "title": "Все эндпоинты",
+    "url": "api/index.html",
+    "description": "Список всех эндпоинтов AutoRent API.",
+    "keywords": "Справочник API"
+  },
+  {
+    "title": "Автомобили",
+    "url": "api/vehicles.html",
+    "description": "Эндпоинты каталога автомобилей.",
+    "keywords": "Справочник API"
+  },
+  {
+    "title": "Бронирования",
+    "url": "api/bookings.html",
+    "description": "Создание и управление бронированиями.",
+    "keywords": "Справочник API"
+  },
+  {
+    "title": "Клиенты",
+    "url": "api/customers.html",
+    "description": "Регистрация и данные клиентов.",
+    "keywords": "Справочник API"
+  },
+  {
+    "title": "Платежи",
+    "url": "api/payments.html",
+    "description": "Оплата бронирований и возвраты.",
+    "keywords": "Справочник API"
+  },
+  {
+    "title": "Вебхуки",
+    "url": "api/webhooks.html",
+    "description": "Подписка на события AutoRent API.",
+    "keywords": "Справочник API"
+  },
+  {
+    "title": "Руководства",
+    "url": "guides/index.html",
+    "description": "Практические руководства по AutoRent API.",
+    "keywords": "Руководства"
+  },
+  {
+    "title": "Коды ошибок",
+    "url": "guides/errors.html",
+    "description": "Коды ошибок AutoRent API и их обработка.",
+    "keywords": "Руководства"
+  },
+  {
+    "title": "Пагинация",
+    "url": "guides/pagination.html",
+    "description": "Постраничное получение списков.",
+    "keywords": "Руководства"
+  },
+  {
+    "title": "История изменений",
+    "url": "changelog.html",
+    "description": "История версий AutoRent API.",
+    "keywords": "Прочее"
+  },
+  {
+    "title": "FAQ",
+    "url": "faq.html",
+    "description": "Частые вопросы об AutoRent API.",
+    "keywords": "Прочее"
+  }
+]

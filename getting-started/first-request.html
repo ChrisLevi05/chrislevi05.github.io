@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Первый запрос — AutoRent API</title>
+  <meta name="description" content="Пример первого запроса к AutoRent API.">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-root="../">
+  <header class="topbar">
+    <a class="logo" href="../index.html"><img src="../assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="../index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="../getting-started/index.html">Быстрый старт</a></li><li><a href="../getting-started/authentication.html">Аутентификация</a></li><li><a class="active" href="../getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="../api/index.html">Все эндпоинты</a></li><li><a href="../api/vehicles.html">Автомобили</a></li><li><a href="../api/bookings.html">Бронирования</a></li><li><a href="../api/customers.html">Клиенты</a></li><li><a href="../api/payments.html">Платежи</a></li><li><a href="../api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="../guides/index.html">Руководства</a></li><li><a href="../guides/errors.html">Коды ошибок</a></li><li><a href="../guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="../changelog.html">История изменений</a></li><li><a href="../faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="../about/">О сайте</a></li><li><a href="../blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Первый запрос</h1>
+<p class="lead">Найдём свободные автомобили в Абиджане на выходные.</p>
+<h2>Запрос</h2>
+<pre><code class="lang-bash">curl &quot;https://sandbox.autorent.example/v2/vehicles?city=abidjan&amp;from=2026-11-07&amp;to=2026-11-09&quot; \
+  -H &quot;Authorization: Bearer ar_test_9f2c7d1e4b8a4c0f9e3d&quot;</code></pre>
+<h2>Ответ</h2>
+<pre><code class="lang-json">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;veh_1042&quot;,
+      &quot;brand&quot;: &quot;Toyota&quot;,
+      &quot;model&quot;: &quot;Corolla&quot;,
+      &quot;year&quot;: 2023,
+      &quot;category&quot;: &quot;sedan&quot;,
+      &quot;price_per_day&quot;: 25000,
+      &quot;currency&quot;: &quot;XOF&quot;,
+      &quot;available&quot;: true
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 20,
+    &quot;total&quot;: 1
+  }
+}</code></pre>
+<p>Пример полного ответа можно скачать: <a href="../data/vehicles-sample.json">vehicles-sample.json</a>.</p>
+<h2>Что дальше</h2>
+<ul>
+  <li><a href="../api/bookings.html">Забронировать этот автомобиль</a></li>
+  <li><a href="../guides/pagination.html">Получить следующие страницы результатов</a></li>
+</ul>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="../assets/js/copy-code.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>

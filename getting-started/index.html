@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Быстрый старт — AutoRent API</title>
+  <meta name="description" content="Как начать работу с AutoRent API.">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-root="../">
+  <header class="topbar">
+    <a class="logo" href="../index.html"><img src="../assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="../index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a class="active" href="../getting-started/index.html">Быстрый старт</a></li><li><a href="../getting-started/authentication.html">Аутентификация</a></li><li><a href="../getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="../api/index.html">Все эндпоинты</a></li><li><a href="../api/vehicles.html">Автомобили</a></li><li><a href="../api/bookings.html">Бронирования</a></li><li><a href="../api/customers.html">Клиенты</a></li><li><a href="../api/payments.html">Платежи</a></li><li><a href="../api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="../guides/index.html">Руководства</a></li><li><a href="../guides/errors.html">Коды ошибок</a></li><li><a href="../guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="../changelog.html">История изменений</a></li><li><a href="../faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="../about/">О сайте</a></li><li><a href="../blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Быстрый старт</h1>
+<p class="lead">За 10 минут вы получите ключ, проверите доступ и найдёте свободный автомобиль.</p>
+<h2>1. Регистрация партнёра</h2>
+<p>Создайте аккаунт в личном кабинете партнёра и подтвердите e-mail. После проверки вам станут доступны две среды:</p>
+<div class="table-wrap"><table><thead><tr><th>Среда</th><th>Базовый адрес</th><th>Назначение</th></tr></thead><tbody><tr><td>Sandbox</td><td><code>https://sandbox.autorent.example/v2</code></td><td>Тестирование, данные не реальные</td></tr><tr><td>Production</td><td><code>https://api.autorent.example/v2</code></td><td>Боевые бронирования и платежи</td></tr></tbody></table></div>
+<h2>2. Получение ключа</h2>
+<p>В разделе «Ключи API» нажмите «Создать ключ». Ключ показывается один раз — сохраните его в надёжном месте.</p>
+<pre><code class="lang-text">ar_test_9f2c7d1e4b8a4c0f9e3d</code></pre>
+<div class="note">Ключи с префиксом <code>ar_test_</code> работают только в Sandbox, с префиксом <code>ar_live_</code> — только в Production.</div>
+<h2>3. Проверка доступа</h2>
+<pre><code class="lang-bash">curl https://sandbox.autorent.example/v2/ping -H &quot;Authorization: Bearer ar_test_9f2c7d1e4b8a4c0f9e3d&quot;</code></pre>
+<pre><code class="lang-json">{&quot;status&quot;: &quot;ok&quot;, &quot;environment&quot;: &quot;sandbox&quot;}</code></pre>
+<p>Дальше: <a href="authentication.html">Аутентификация</a>.</p>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="../assets/js/copy-code.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>

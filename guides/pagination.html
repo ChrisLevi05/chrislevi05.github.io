@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пагинация — AutoRent API</title>
+  <meta name="description" content="Постраничное получение списков.">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-root="../">
+  <header class="topbar">
+    <a class="logo" href="../index.html"><img src="../assets/images/logo.svg" alt="" width="28" height="28"> AutoRent API</a>
+    <span class="version">v2.1</span>
+    <div class="search">
+      <input id="search-input" type="search" placeholder="Поиск по документации…" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav><ul><li><a href="../index.html">Обзор</a></li></ul><p class="nav-group">Начало работы</p><ul><li><a href="../getting-started/index.html">Быстрый старт</a></li><li><a href="../getting-started/authentication.html">Аутентификация</a></li><li><a href="../getting-started/first-request.html">Первый запрос</a></li></ul><p class="nav-group">Справочник API</p><ul><li><a href="../api/index.html">Все эндпоинты</a></li><li><a href="../api/vehicles.html">Автомобили</a></li><li><a href="../api/bookings.html">Бронирования</a></li><li><a href="../api/customers.html">Клиенты</a></li><li><a href="../api/payments.html">Платежи</a></li><li><a href="../api/webhooks.html">Вебхуки</a></li></ul><p class="nav-group">Руководства</p><ul><li><a href="../guides/index.html">Руководства</a></li><li><a href="../guides/errors.html">Коды ошибок</a></li><li><a class="active" href="../guides/pagination.html">Пагинация</a></li></ul><p class="nav-group">Прочее</p><ul><li><a href="../changelog.html">История изменений</a></li><li><a href="../faq.html">FAQ</a></li></ul></nav>
+      <p class="nav-group">Лабораторная 1</p>
+      <ul><li><a href="../about/">О сайте</a></li><li><a href="../blog/post1.html">Блог</a></li></ul>
+    </aside>
+    <main class="content">
+
+<h1>Пагинация</h1>
+<p class="lead">Списки возвращаются страницами по 20 элементов (максимум 100).</p>
+<pre><code class="lang-bash">curl &quot;https://api.autorent.example/v2/vehicles?page=2&amp;per_page=50&quot; -H &quot;Authorization: Bearer $AUTORENT_KEY&quot;</code></pre>
+<h2>Блок meta в ответе</h2>
+<pre><code class="lang-json">{
+  &quot;meta&quot;: {
+    &quot;page&quot;: 2,
+    &quot;per_page&quot;: 50,
+    &quot;total&quot;: 134,
+    &quot;total_pages&quot;: 3
+  }
+}</code></pre>
+<h2>Перебор всех страниц</h2>
+<pre><code class="lang-javascript">async function fetchAll(url, key) {
+  let page = 1, all = [];
+  while (true) {
+    const res = await fetch(`${url}?page=${page}`, { headers: { Authorization: `Bearer ${key}` } });
+    const json = await res.json();
+    all = all.concat(json.data);
+    if (page &gt;= json.meta.total_pages) break;
+    page++;
+  }
+  return all;
+}</code></pre>
+
+    </main>
+  </div>
+  <footer class="footer">AutoRent API — учебная документация вымышленного сервиса. Автор: Bezeme Bezeme Kris Levi, КубГУ, 2026.</footer>
+  <script src="../assets/js/copy-code.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>
